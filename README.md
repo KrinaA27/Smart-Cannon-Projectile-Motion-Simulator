@@ -84,9 +84,9 @@ This mimics a feedback control system, showing how repeated correction converges
 - Six clear plots:
   1. Projectile's position over time
   2. Projectile's velocity over time
-  3. Projectile's position as it is launched at two angles to hit a target x upon impact
-  4. Convergence of calculations of those angles
-  5. Convergence of missed launches
+  3. Projectile's position for two launch angles hitting the same target
+  4. Convergence of calculated angles
+  5. Miss adjustments over iterations
   6. Angle Adjustment over time
 
 ---
@@ -97,8 +97,8 @@ pip install matplotlib numpy
 
 
 ### How to Run
-1. Download the file and run it through the Python IDLE, or enter python Projectile_Motion_Simulation.py into the command prompt.
-2. Code will run the simulation.
+1. Download the file and run it through the Python IDLE, or enter python Projectile_cannon.py into the command prompt.
+2. Code will run the simulation and produce graphs.
 
 ### References
 Fundamentals of Physics — Halliday, Resnick & Walker
