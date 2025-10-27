@@ -33,31 +33,27 @@ I learned how discrete-time simulation (Euler integration) approximates motion e
 
 ### Physics Model
 The cannonball’s position is updated using Euler’s method:
-\[
-v_y(t + \Delta t) = v_y(t) - g \cdot \Delta t
-\]
-\[
-x(t + \Delta t) = x(t) + v_x \cdot \Delta t
-\]
-\[
-y(t + \Delta t) = y(t) + v_y(t) \cdot \Delta t
-\]
+
+v_y(t + Δt) = v_y(t) − g·Δt  
+x(t + Δt) = x(t) + v_x·Δt  
+y(t + Δt) = y(t) + v_y·Δt
 Simulation stops when \( y < 0 \) (the cannonball hits the ground).
 
 
 ### Analytical Reference
 For level ground (no drag), the theoretical range, height, and flight time are:
-\[
-R = \frac{v^2 \sin(2\theta)}{g}, \quad
-H = \frac{v^2 \sin^2(\theta)}{2g}, \quad
-T = \frac{2v \sin(\theta)}{g}
-\]
+
+R = (v²·sin(2θ)) / g  
+H = (v²·sin²(θ)) / (2g)  
+T = (2v·sin(θ)) / g
 These are compared to simulation results for validation.
 
 
 ### Iterative Aiming Controller
 A simple “auto-aim” loop repeatedly fires, measures the miss, and adjusts the angle:
+
 miss = target_x - impact_x
+
 angle += learn_rate * sign(miss) * log1p(abs(miss))
 
 This mimics a feedback control system, showing how repeated correction converges on the target.
